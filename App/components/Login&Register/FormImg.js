@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Image, ImageBackground , View } from 'react-native';
-import Logo from '../../assets/Logo.png'
+// import Logo from '../../../assets/Logo.png'
+import Logo from '../../../assets/Logo.png'
 
 const FormImg = () => {
     return (

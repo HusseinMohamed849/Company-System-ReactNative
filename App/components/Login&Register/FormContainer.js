@@ -12,6 +12,7 @@ const FormContainer =({children}) => {
 const styles = StyleSheet.create({
     container:{
         paddingHorizontal:20,
+        height:300,
         width:Dimensions.get('window').width,
         
     }
