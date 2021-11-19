@@ -4,11 +4,12 @@ import { ScrollView, StyleSheet, Text, TouchableWithoutFeedback, View , Dimensio
 import MainPage from './App/components/HomePage/MainPage';
 import Login_register from './App/components/Login&Register/Login_register';
 import Add from './App/components/HomePage/Add'
+import Feed from './App/components/HomePage/Feed';
 
 export default function App() {
 
  return (
-   <Add />
+   <Feed />
     
   );
 }

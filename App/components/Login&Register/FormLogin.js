@@ -5,16 +5,19 @@ import FormContainer from './FormContainer';
 import FormInput from './FormInput';
 
 
-const FormLogin =()=>{
+
+
+const FormLogin =({navigation})=>{
     return (
         <FormContainer>
             <FormInput title="Email" placeholder="example@yahoo.com"/>
             <FormInput title="Password" placeholder="Enter Your Password"/>
-            <FormBtn title="Login"/>
+            <FormBtn  title="Login"/>
             <Text style={styles.forget}>Forget your Password?</Text>
         </FormContainer>   
     )
 }
+
 
 const styles = StyleSheet.create({
     forget:{

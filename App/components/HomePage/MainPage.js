@@ -1,23 +1,45 @@
 import React from 'react';
-import { StyleSheet, Text, View,StatusBar, TouchableWithoutFeedback, Pressable } from 'react-native';
-import Add from './Add'
-import Setting from './Setting'
+import { StyleSheet, Text, View,Button,StatusBar, TouchableWithoutFeedback, Pressable } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Feed from './Feed';
 
-import {createStackNavigator} from 'react-navigation'
 
-const RootStack = createStackNavigator({
-    Setting:Setting,
-    Add:Add,
-})
+const Stack = createNativeStackNavigator()
 
-export default class MainPage extends React.Component{
-    render(){
-        return <RootStack />
-    }
+function MainPage() {
+    return(
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen  component={Page} name="Feed"/>
+                <Stack.Screen  component={Home} name="Home"/>
+            </Stack.Navigator>
+        </NavigationContainer>
+    )
+}
+
+const Home = () =>{
+    return(
+     <View style={styles.container}>
+        <Text>
+            da bgd ?
+        </Text>
+    </View>   
+    )
+}
+
+
+const Page = ({navigation}) =>{
+    return(
+        <Feed />
+    )
 }
 
 const styles = StyleSheet.create({
     container:{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    }})
 
-    }
-})
+export default MainPage
