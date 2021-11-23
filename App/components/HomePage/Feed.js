@@ -1,13 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text, View,StatusBar, TouchableWithoutFeedback, Pressable } from 'react-native';
+import { StyleSheet, Text, View,StatusBar, TouchableWithoutFeedback,Dimensions, Pressable } from 'react-native';
 import Icon1 from 'react-native-ico';
 import {NavigationContainer} from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Add from './Add';
 import setting from './Setting'
 import profile from './Profile';
-import allSub from './allSub';
-import Search from './Search';
+import Subs from './Subs'
+
 
 const Stack = createNativeStackNavigator()
 
@@ -18,12 +18,10 @@ const iconWidth = 26
     return(
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen  component={Home} name="Home"/>
-                <Stack.Screen  component={Add} name="Add"/>
-                <Stack.Screen  component={setting} name="Setting"/>
-                <Stack.Screen  component={profile} name="profile"/>
-                <Stack.Screen  component={allSub} name="allSub"/>
-                <Stack.Screen  component={Search} name="Search"/>
+                <Stack.Screen  component={Home} name="الصفحه الرئيسيه"/>
+                <Stack.Screen  component={Add} name="أضافه مصاريف"/>
+                <Stack.Screen  component={setting} name="الاعدادات"/>
+                <Stack.Screen  component={profile} name="الصفحه الشخصيه"/>
             </Stack.Navigator>
         </NavigationContainer>
       )
@@ -42,30 +40,26 @@ const iconWidth = 26
   // }
     return(
       <View style={styles.container}>
-        <View>
-          <Text style={{fontSize:30,fontWeight:"bold",color:"red"}}>welcome</Text>
+        <View style={styles.home}>
+          <Subs title="حسين" value="5000" name="احمد"/>
+          <Subs title="سيد" value="2000" name="مصطفي"/>
+          <Subs title="فتحي" value="2000" name="يسس"/>
+          
           <StatusBar style="light" />
-      </View>
+        </View>
 
       <View style={styles.NavContainer}>
         <View style={styles.NavBar}>
-          <Pressable onPress={()=> navigation.navigate('allSub')} style={styles.IconBehav}
-            android_ripple={{borderless:true, radius:50}}>
-            <Icon1 name="group-profile-users" group="font-awesome" height={iconHeight} width={iconWidth} color="#1b1b33"/>
-          </Pressable>
-          <Pressable onPress={()=> navigation.navigate('Search')} style={styles.IconBehav}
-            android_ripple={{borderless:true, radius:50}}>
-            <Icon1 name="search" group="miscellaneous"height={iconHeight} width={iconWidth} color="#1b1b33"/>
-          </Pressable>
-          <Pressable  onPress={()=> navigation.navigate('Add')} style={styles.IconBehav}
-            android_ripple={{borderless:true, radius:50}}>
-            <Icon1 name="add-1" group="essential"height={iconHeight} width={iconWidth}color="#1b1b33"/>
-          </Pressable>
-          <Pressable onPress={()=> navigation.navigate('profile')} style={styles.IconBehav}
+          
+          <Pressable onPress={()=> navigation.navigate('الصفحه الشخصيه')} style={styles.IconBehav}
             android_ripple={{borderless:true, radius:50}}>
             <Icon1 name="profile" group="basic" height={iconHeight} width={iconWidth} color="#1b1b33"/>
           </Pressable>
-          <Pressable onPress={()=> navigation.navigate('Setting')} style={styles.IconBehav}
+          <Pressable  onPress={()=> navigation.navigate('أضافه مصاريف')} style={styles.IconBehav}
+            android_ripple={{borderless:true, radius:50}}>
+            <Icon1 name="add-1" group="essential"height={iconHeight} width={iconWidth}color="red"/>
+          </Pressable>
+          <Pressable onPress={()=> navigation.navigate('الاعدادات')} style={styles.IconBehav}
             android_ripple={{borderless:true, radius:50}}>
             <Icon1 name="settings" group="miscellaneous" height={iconHeight} width={iconWidth} color="#1b1b33"/>
           </Pressable>
@@ -95,6 +89,11 @@ container:{
    borderRadius:40
  },IconBehav:{
    padding:14
+ },home:{
+  height:250,
+  width:Dimensions.get('window').width,
+  marginTop:300,
+  marginLeft:400,
  }
 })
 

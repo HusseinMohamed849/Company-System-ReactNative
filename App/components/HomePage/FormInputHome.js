@@ -13,17 +13,20 @@ const FormInputHome =({placeholder, title}) => {
 
 const styles = StyleSheet.create({
     text:{
-        fontWeight:"bold",
+        // fontWeight:"bold",
         color:"black",
+        marginRight:42,
+        fontSize:20
     },style:{
-        color:"rgba(255,255,255,0.9)",
+        color:"rgba(0,0,0,0.9)",
         borderWidth:2,
-        width:"70%",
+        width:"90%",
         borderColor:'#1b1b33',
         height:35,
-        borderRadius:8,
+        borderRadius:20,
         fontSize:16,
-        paddingLeft:10,
+        paddingLeft:12,
+        paddingRight:12,
         marginBottom:10,
     }
 })
